@@ -2,7 +2,66 @@
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
 
-To get started, check out the repository, inspect the code,
+### PageSpeed Performance Optimizations
+
+The following optimizations were added to improve the website performance:
+
+1. Reduced the size of pizzeria.jpg image
+1. Compressed the pizzeria.jpg image
+1. Compressed the profilepic.jpg image
+1. Calls to JavaScript files set to async in index.html
+1. Set media to print for print.css
+1. Created phone-portrait.css for specific phone based CSS and set media query
+1. Installed gulp and set up tasks to minify html, minify css, minify javascript, inline css, and minify images
+1. Set up src and dist directory structure to manage gulp tasks (see section below for setting up gulp)
+
+### Gulp Setup and Execution
+
+The following are details on how to setup gulp in this environment to perform the desired tasks:
+
+1. Install gulp
+
+  ```bash
+  $> sudo npm install gulp -g
+  ```
+1. Create gulp project
+
+  ```bash
+  $> sudo npm init
+  $> sudo npm install gulp --save-dev
+  ```
+1. Install gulp-htmlmin
+
+  ```bash
+  $> sudo npm install --save-dev gulp-htmlmin
+  ```
+1. Install gulp-cssmin
+
+  ```bash
+  $> sudo npm install --save-dev gulp-cssmin
+  ```
+1. Install gulp-inline-css
+
+  ```bash
+  $> sudo npm install --save-dev gulp-inline-css
+  ```
+1. Install gulp-rename
+
+  ```bash
+  $> sudo npm install gulp-rename
+  ```
+1. Install gulp-imagemin
+
+  ```bash
+  $> sudo npm install --save-dev gulp-imagemin
+  $> sudo npm i -D imagemin-pngquart
+  ```
+1. Run gulp
+
+  ```bash
+  Add tasks to gulp file (see gulpfile.js for details)
+  $> gulp
+  ```
 
 ### Getting started
 
