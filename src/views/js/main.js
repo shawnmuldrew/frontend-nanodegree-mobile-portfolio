@@ -422,6 +422,7 @@ var resizePizzas = function(size) {
   changeSliderLabel(size);
 
   // Returns a pizza size percent width based on slider value
+  // Changed code to use a percent rather than calculate pixel value
   function sizeSwitcher (size) {
     switch(size) {
       case "1":

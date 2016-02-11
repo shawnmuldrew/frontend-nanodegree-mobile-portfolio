@@ -19,12 +19,7 @@ The following optimizations were added to improve the website performance:
 
 The following are details on how to setup gulp in this environment to perform the desired tasks:
 
-1. Install gulp
-
-  ```bash
-  $> sudo npm install gulp -g
-  ```
-1. Create gulp project
+1. Set up npm and gulp
 
   ```bash
   $> sudo npm init
@@ -56,12 +51,23 @@ The following are details on how to setup gulp in this environment to perform th
   $> sudo npm install --save-dev gulp-imagemin
   $> sudo npm i -D imagemin-pngquart
   ```
+1. Configure gulpfile.js to run all the tasks installed above
+
 1. Run gulp
 
   ```bash
-  Add tasks to gulp file (see gulpfile.js for details)
   $> gulp
   ```
+
+### Frames Per Second Optimizations
+
+1. Modified pizza size slider to use a percent rather than calculate a pixel size
+1. Reduced number of pizza images being generated to 50 from 200. Most of the 200 pizzas were off-screen
+1. Created global variable movers to store all the mover class elements (removed from loop)
+1. Replaced document.querySelectorAll with document.getElementsByClassName
+1. Calculated the 5 scrolling phases of each pizza movement once and sotred in array to reference during scrolling activities
+
+
 
 ### Getting started
 

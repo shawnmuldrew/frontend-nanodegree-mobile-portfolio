@@ -12,7 +12,7 @@ var config = {
     paths: {
         html: {
             src:  ["src/**/*.html"],
-            dest: "dest"
+            dest: "dist"
         },
     }
 }
@@ -27,21 +27,21 @@ gulp.task('cssmin', function () {
   gulp.src('src/**/*.css')
     .pipe(cssmin())
 //    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dest'));
+    .pipe(gulp.dest('dist'));
     });
 
 gulp.task('jsmin', function(){
   gulp.src('src/**/*.js')
     .pipe(uglify())
 //    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dest'));
+    .pipe(gulp.dest('dist'));
 });
 
  
 gulp.task('inlinecss', function() {
     return gulp.src('src/index.html')
         .pipe(inlineCss())
-        .pipe(gulp.dest('dest'));
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('imagemin1', function() {
@@ -51,7 +51,7 @@ gulp.task('imagemin1', function() {
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         }))
-        .pipe(gulp.dest('dest/img'));
+        .pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('imagemin2', function() {
@@ -61,7 +61,7 @@ gulp.task('imagemin2', function() {
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant()]
         }))
-        .pipe(gulp.dest('dest/views/images'));
+        .pipe(gulp.dest('dist/views/images'));
 });
 
 gulp.task('default', ['inlinecss', 'htmlmin', 'cssmin' , 'jsmin', 'imagemin1', 'imagemin2']);
