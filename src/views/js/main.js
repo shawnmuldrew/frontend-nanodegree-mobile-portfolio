@@ -529,8 +529,8 @@ window.addEventListener('scroll', updatePositions);
 // Generates the sliding pizzas when the page loads.
 // Reduced pizzas from 200 to 50 as that would be max on screen
 document.addEventListener('DOMContentLoaded', function() {
-  var cols = 6; // changed from 8
-  var s = 384; // changed from 256
+  var cols = 8; 
+  var s = 256; 
   for (var i = 0; i < 50; i++) {  //changed from 200
     var elem = document.createElement('img');
     elem.className = 'mover';
